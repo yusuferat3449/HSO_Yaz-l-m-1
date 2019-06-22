@@ -47,6 +47,13 @@ namespace Metotlar_2
             string cevap = ASCII_Dondur();
             Console.WriteLine(cevap);
 
+            //7
+            icice();
+
+            //8
+            int[] dizi1 = new int[] {77,66,88,33,22,90 };
+            DiziYazdir(dizi1);
+
             Console.ReadKey();
         }
         // 1. Parametre almayan ve değer döndürmeyen metot
@@ -84,5 +91,27 @@ namespace Metotlar_2
 
         }
 
+        // 7. İçİçe Metot Kullanımı
+
+        static void icice()
+        {
+            Console.WriteLine("Merhaba SmartPro'lular");
+            Console.WriteLine(merhabaDondur());
+        }
+
+        // 8. Parametre olarak dizi göndermek.
+        static void DiziYazdir(int[] dizi1)
+        {
+            foreach (var item in dizi1)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
+
+/*
+ * Metot Overloading anlatılacak.
+ * Ref Out Anlatılacak.
+ * Parametrelerde detaylara girilecek.
+ */
