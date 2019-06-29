@@ -69,10 +69,14 @@ namespace Metotlar_2
 
             // 11
 
-            ogrenciNumaralari("405 Yazılım Uzmanlığı Eğitimi", 45, 34, 55, 77, 99);
-            ogrenciNumaralari("404 Yazılım Uzmanlığı Eğitimi", 55, 77, 99);
+            //ogrenciNumaralari("405 Yazılım Uzmanlığı Eğitimi", 45, 34, 55, 77, 99);
+            //ogrenciNumaralari("404 Yazılım Uzmanlığı Eğitimi", 55, 77, 99);
 
+            // 12
+            Aciklama();
 
+            
+            
             Console.ReadKey();
         }
         // 1. Parametre almayan ve değer döndürmeyen metot
@@ -161,6 +165,17 @@ namespace Metotlar_2
             {
                 Console.WriteLine($"{i+1}. Öğrencinin Numarası: {numaralar[i]}");
             }
+        }
+
+        //12 Metot açıklaması eklemek.
+
+        ///<summary>
+        /// Bu metoda açıklama eklenmiştir.
+        /// Açıklama için 3 adet / işareti koymak yeterlidir.
+        /// summary etiketleri arasına yazılır.
+        ///</summary>
+        static void Aciklama() {
+            Console.WriteLine("Açıklama Metodu Çalıştı.");
         }
 
     }

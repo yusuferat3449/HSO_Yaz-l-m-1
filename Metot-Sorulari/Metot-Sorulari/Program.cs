@@ -11,46 +11,85 @@ namespace Metot_Sorulari
         static void Main(string[] args)
         {
             /*
-             SORU1: 
-                3 int parametre alan ve üçgen çevre hesabını 
-                yapan metodu değer döndüren ve döndürmeyen 
-                2 şekliyle yazınız.
-             */
-            //CEVAP1:
-            UcgenCevreYaz(3, 4, 5);
-            UcgenCevreYaz(6, 8, 10);
+            // SORU1: 
+            //    3 int parametre alan ve üçgen çevre hesabını 
+            //    yapan metodu değer döndüren ve döndürmeyen 
+            //    2 şekliyle yazınız.
+            // */
+            ////CEVAP1:
+            //UcgenCevreYaz(3, 4, 5);
+            //UcgenCevreYaz(6, 8, 10);
 
-            int ucgenCevre = UcgenCevreDondur(3, 4, 5);
-            Console.WriteLine($"Üçgenin Çevresi: {ucgenCevre} cm'dir.");
-
-            /*
-             SORU2: int bir değer alan metot 1'den aldığı 
-                değere kadar olan sayıları toplayıp döndürecek.
-             */
-            //CEVAP2:
-            int toplam = SayiTopla(5);
-            Console.WriteLine($"1'den 5'e kadar olan sayıların toplamı: {toplam}");
+            //int ucgenCevre = UcgenCevreDondur(3, 4, 5);
+            //Console.WriteLine($"Üçgenin Çevresi: {ucgenCevre} cm'dir.");
 
             /*
-             SORU3: Parametre olarak aldığı 2 int değerin
-                birbirinin katı olup olmadğını ekrana yazdıran
-                metot.
+            // SORU2: int bir değer alan metot 1'den aldığı 
+            //    değere kadar olan sayıları toplayıp döndürecek.
+            // */
+            ////CEVAP2:
+            //int toplam = SayiTopla(5);
+            //Console.WriteLine($"1'den 5'e kadar olan sayıların toplamı: {toplam}");
+
+            /*
+            // SORU3: Parametre olarak aldığı 2 int değerin
+            //    birbirinin katı olup olmadğını ekrana yazdıran
+            //    metot.
+            */
+
+            ////CEVAP3:
+            ////KatiMi(15, 5);
+            ////KatiMi(5, 15);
+            ////KatiMi(5, 5);
+
+            //KatiMiKisa(15, 5);
+            //KatiMiKisa(5, 15);
+            //KatiMiKisa(5, 3);
+
+
+
+
+
+            /*SORU4: Dizi eleman sayısı istiyoruz. Sonra bu değere kadar klavyeden sayı isteyip diziye atıyoruz.
+             * Main içerisinde bir sayı istenecek ve bu sayıya kadar döngü oluşturup 
+             * girilen elemanlar diziye atanacak.
+             * Daha sonra bu dizi diziCarpma isimli metota gönderilecek.
+             * Bu metot dizinin elemanlarını çarpıp ekrana yazdıracak.
              */
 
-            //CEVAP3:
-            //KatiMi(15, 5);
-            //KatiMi(5, 15);
-            //KatiMi(5, 5);
+            //CEVAP4:
 
-            KatiMiKisa(15, 5);
-            KatiMiKisa(5, 15);
-            KatiMiKisa(5, 3);
+            Console.Write("Kaç eleman gireceksiniz?");
+            string okunan = Console.ReadLine();
+            int elemanSayisi = Convert.ToInt32(okunan);
+
+            int[] elemanlar = new int[elemanSayisi];
+
+            for (int i = 0; i < elemanSayisi; i++)
+            {
+                Console.Write($"{i+1}. sayıyı giriniz: ");
+                string sayiStr = Console.ReadLine();
+                int sayi = Convert.ToInt32(sayiStr);
+
+                elemanlar[i] = sayi;
+            }
+
+            diziCarpma(elemanlar);
+
+
+
+            
 
 
 
 
             Console.ReadKey();
         }
+
+
+
+
+
         //CEVAP1:
         static void UcgenCevreYaz(int k1, int k2, int k3)
         {
@@ -125,6 +164,17 @@ namespace Metot_Sorulari
                 }
             }
             
+        }
+
+        // CEVAP4
+        static void diziCarpma(int[] elemanlar)
+        {
+            double sonuc = 1;
+            for (int i = 0; i < elemanlar.Length; i++)
+            {
+                sonuc = sonuc * elemanlar[i];
+            }
+            Console.WriteLine("Dizi elemanlarının çarpımı :" + sonuc);
         }
     }
 }
