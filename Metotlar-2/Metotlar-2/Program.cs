@@ -86,10 +86,31 @@ namespace Metotlar_2
 
             //15 Metoetların AŞırı Yüklenmesi.
 
-            metot();
-            metot(5);
-            metot("SmartPro");
-            metot(3, 5);
+            //metot();
+            //metot(5);
+            //metot("SmartPro");
+            //metot(3, 5);
+
+            //16
+            // ref 'te ilk değer ataması zorunludur. out'da ilk değer atanmasa da program çalışır.
+
+            //int s = 99;
+            int s;
+            //sayiGoster(s);
+            //Console.WriteLine("Sayının main içerisindeki değeri: "+s);
+
+            //sayiGoster(ref s);
+            //Console.WriteLine("Sayının main içerisindeki değeri: " + s);
+
+            sayiGoster(out s);
+            Console.WriteLine("Sayının main içerisindeki değeri: " + s);
+
+            // 17
+            
+            Faktoriyel(5);
+            //return 5 * (4 * (3 * (2 * (1) * 1))
+
+
             Console.ReadKey();
         }
         // 1. Parametre almayan ve değer döndürmeyen metot
@@ -245,22 +266,34 @@ namespace Metotlar_2
             Console.WriteLine(b);
         }
 
+        // 16 : ref ve out anahtar sözcüğü
+
+        static void sayiGoster(int sayi)
+        {
+            sayi = 55;
+            Console.WriteLine("Metot içindeki sayi: " + sayi);
+        }
+        //static void sayiGoster(ref int sayi)
+        //{
+        //    sayi = 55;
+        //    Console.WriteLine("Metot içindeki sayi: " + sayi);
+        //}
+        static void sayiGoster(out int sayi)
+        {
+            sayi = 55;
+            Console.WriteLine("Metot içindeki sayi: " + sayi);
+        }
 
 
+        // 17
+        // Kendini çağıran metotlar: Recursive
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        static int Faktoriyel(int a)
+        {
+            if (a == 0)
+                return 1;
+            return a * Faktoriyel(a - 1);
+        }
 
     }
 }
