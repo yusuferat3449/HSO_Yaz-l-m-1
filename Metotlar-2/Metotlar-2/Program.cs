@@ -72,11 +72,24 @@ namespace Metotlar_2
             //ogrenciNumaralari("405 Yazılım Uzmanlığı Eğitimi", 45, 34, 55, 77, 99);
             //ogrenciNumaralari("404 Yazılım Uzmanlığı Eğitimi", 55, 77, 99);
 
-            // 12
-            Aciklama();
+            //// 12
+            //Aciklama();
 
-            
-            
+            //// 13
+
+            //ogrBilgiYazdir(1992, "Servi", 55);
+            //ogrBilgiYazdir(1992);
+
+            //// 14 isimler ile parametrelere değer atamak
+            //namedParametre(soyad: "Demir", yas: 77, ad: "Mehmet");
+
+
+            //15 Metoetların AŞırı Yüklenmesi.
+
+            metot();
+            metot(5);
+            metot("SmartPro");
+            metot(3, 5);
             Console.ReadKey();
         }
         // 1. Parametre almayan ve değer döndürmeyen metot
@@ -178,6 +191,77 @@ namespace Metotlar_2
             Console.WriteLine("Açıklama Metodu Çalıştı.");
         }
 
+
+        //13
+        // Opsiyonel Parametreli Metotlar
+        // Opsiyonel parametrelere değer gönderilmez ise vrasayılan değeri kullanılır.
+        static void ogrBilgiYazdir(int dogumYili=0, string ad = "NONAME", int kilo=60)
+        {
+            Console.WriteLine($"Ad: {ad} Doğum Yılı: {dogumYili} Kilo: {kilo}");
+        }
+
+
+        // 14: İsimli Kullanım, Named Parametreli Metotlar:
+        static void namedParametre(string ad, string soyad, int yas)
+        {
+            Console.WriteLine($"Ad: {ad} Soyad: {soyad} Yaş: {yas}");
+
+            //strin birleştirme
+            string adSoyad = string.Concat(ad, " ", soyad);
+            Console.WriteLine(adSoyad);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 15: Methotların aşırı yüklenmesi: MethodOverloading
+        static void metot()
+        {
+            Console.WriteLine("404 Sınıf");
+        }
+
+        static void metot(int a)
+        {
+            Console.WriteLine(a);
+        }
+
+        static void metot(int a, int b)
+        {
+            Console.WriteLine(a +" " +b);
+        }
+
+        static void metot(string b)
+        {
+            Console.WriteLine(b);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
@@ -186,3 +270,8 @@ namespace Metotlar_2
  * Ref Out Anlatılacak.
  * Parametrelerde detaylara girilecek.(params)
  */
+
+
+
+
+
