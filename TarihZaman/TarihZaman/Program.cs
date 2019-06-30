@@ -45,7 +45,7 @@ namespace TarihZaman
             Console.WriteLine(gecenZaman.Days);
 
 
-            
+
 
 
 

@@ -53,30 +53,30 @@ namespace Ornekler
              * Klavyeden T t harflerinden birisi girilmişse tek sayı üretecek.
              * Giriş bunlardan birisi değilse Kullanıcıya uyarı verdirip yenden isteyeceğiz.
              */
-            bool girisBasarili = false;
-            bool ciftMi=false;
+            //bool girisBasarili = false;
+            //bool ciftMi=false;
 
-            do
-            {
-                Console.Write("Tek için T Çift için Ç yazı Enter tuşuna basınız: ");
-                string harf = Console.ReadLine();
-                if (harf == "C" || harf == "c" || harf == "Ç" || harf == "ç")
-                {
-                    ciftMi = true;
-                    girisBasarili = true;
-                }else if(harf == "T" || harf == "t")
-                {
-                    ciftMi = false;
-                    girisBasarili = true;
-                }
-                else
-                {
-                    girisBasarili = false;
-                }
+            //do
+            //{
+            //    Console.Write("Tek için T Çift için Ç yazı Enter tuşuna basınız: ");
+            //    string harf = Console.ReadLine();
+            //    if (harf == "C" || harf == "c" || harf == "Ç" || harf == "ç")
+            //    {
+            //        ciftMi = true;
+            //        girisBasarili = true;
+            //    }else if(harf == "T" || harf == "t")
+            //    {
+            //        ciftMi = false;
+            //        girisBasarili = true;
+            //    }
+            //    else
+            //    {
+            //        girisBasarili = false;
+            //    }
 
-            } while (girisBasarili == false);
+            //} while (girisBasarili == false);
 
-            int[] dizi2 = new int[5];
+            //int[] dizi2 = new int[5];
 
             // 1. Yöntem
             //if (ciftMi) //ciftMi==true
@@ -116,25 +116,61 @@ namespace Ornekler
             //    }
             //}
             // 2. Yöntem Metotlu
-            if (ciftMi==true)
+            //if (ciftMi==true)
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        dizi2[i] = CiftSayiUret(1, 1000);
+            //        Console.WriteLine(dizi2[i]);
+            //    }
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        dizi2[i] = TekSayiUret(1, 1000);
+            //        Console.WriteLine(dizi2[i]);
+            //    }
+            //}
+
+
+
+
+            // SORU4: Klavyeden kullanıcıdan aşağıdaki bilgileri isteyeceğiz
+            // Ad Soyad
+            // Dogum Tarihi
+            // Yaşını Hesapla
+
+            // Bu işlemleri yapan ve ekrana yazdıran metodu yazınız.
+
+            //CEVAP4:
+
+            //KullaniciBilgi();
+
+            // SORU5: Kendisine gönderilen sayı kadar sayı kadar rastgele sayı üreten metot.
+            /*
+             * 10 sayı üretecek.
+             * Klavyeden en küçük ve en büyük değeri isteyin.
+             * Bu 3 değeri metoda gönderin.
+             * Bu sayıyı random sayı üretmen metoduna gönderin.
+             * Metodun dönüş tipi dizi int olacak.
+             * 
+             */
+
+            int[] dizi3 = new int[10];
+            Console.Write("En küçük Değeri Gir: ");
+            int kucuk = Convert.ToInt32(Console.ReadLine());
+            Console.Write("En büyük Değeri Gir: ");
+            int buyuk = Convert.ToInt32(Console.ReadLine());
+
+            dizi3 = SayiUret(10,kucuk,buyuk);
+            foreach (var item in dizi3)
             {
-                for (int i = 0; i < 5; i++)
-                {
-                    dizi2[i] = CiftSayiUret(1, 1000);
-                    Console.WriteLine(dizi2[i]);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    dizi2[i] = TekSayiUret(1, 1000);
-                    Console.WriteLine(dizi2[i]);
-                }
+                Console.WriteLine(item);
             }
 
 
-            
+
 
             Console.Read();
 
@@ -195,5 +231,35 @@ namespace Ornekler
             } while (randomSayi % 2 == 0);
             return randomSayi;
         }
+        // CEVAP4
+        static void KullaniciBilgi()
+        {
+
+            Console.Write("Adınızı Giriniz: ");
+            string ad = Console.ReadLine();
+            Console.Write("Doğum Tarihinizi Giriniz: ");
+            //int dt = Convert.ToInt32(Console.ReadLine());
+
+            DateTime dogTar = DateTime.Parse(Console.ReadLine());
+
+            TimeSpan gecenZaman = DateTime.Now - dogTar;
+
+            int yas = gecenZaman.Days / 365;
+            Console.WriteLine("Yaşınız : {0}  {1}", yas, ad);
+        }
+
+        // CEVAP5
+        static int[] SayiUret(int boyut, int kucuk, int buyuk)
+        {
+            int[] dizi = new int[boyut];
+            for (int i = 0; i < boyut; i++)
+            {
+                dizi[i] = rastgele.Next(kucuk, buyuk + 1);
+            }
+            return dizi;
+        }
+
+
+
     }
 }
