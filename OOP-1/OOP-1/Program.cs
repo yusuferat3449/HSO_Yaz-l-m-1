@@ -62,7 +62,10 @@ namespace OOP_1
         //public Ogrenci() {
         //    Console.WriteLine("Yeni Öğrenci Oluşturuldu.");
         //}
-
+        // SORU: Televizyon;
+        // KDVHesapla(); KDV = Fiyat * 0.18;
+        // Yapıcı Metotdunda: "Yeni TV oluşturuldu."
+        // Yıkıcı Metotdunda: "Bir TV yok edildi."
         public Ogrenci()
         {
             this.Ad = "NoName";
@@ -86,11 +89,6 @@ namespace OOP_1
             this.NotOrt = (not1 + not2) / 2;
 
         }
-
-
-
-
-
         ~Ogrenci()
         {
             Console.WriteLine("YIKICI METOT ÇALIŞTI !!!!");
