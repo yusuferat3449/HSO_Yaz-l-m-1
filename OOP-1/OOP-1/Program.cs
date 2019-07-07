@@ -104,7 +104,7 @@ namespace OOP_1
         }
 
 
-        public void OgrenciKaydet(string adSoyad,string tc, float not1, float not2,DateTime dogum)
+        public void OgrenciKaydet(string adSoyad, string tc, float not1, float not2,DateTime dogum)
         {
             string[] adSoyadDizisi = adSoyad.Split(' ');
             this.Ad = adSoyadDizisi[0];
