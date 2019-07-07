@@ -17,6 +17,8 @@ namespace EMLAK
         public float KiraFiyati;
         public short YapimTarihi;
 
+        public Emlak() { }
+
         public Emlak(int id, string baslik, string adres, byte oda, byte salon, float fiyatS, float fiyatK, short yapimTarihi)
         {
             this.ID = id;
