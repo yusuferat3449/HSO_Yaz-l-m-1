@@ -101,13 +101,60 @@ namespace Metot_Sorulari
              * sayıların toplamını gösterecek(adet farketmeksizin)
              */
 
-            // CEVAP6:
-            toplamGoster(1, 2, 3);
-            toplamGoster(15, 44, 5.5F, 77.9f);
-            toplamGoster(1000.45m, 100000, 25, 13.99m);
+            //// CEVAP6:
+            //toplamGoster(1, 2, 3);
+            //toplamGoster(15, 44, 5.5F, 77.9f);
+            //toplamGoster(1000.45m, 100000, 25, 13.99m);
+
+
+
+            // SORU7: Ucgen isminde bir sınıf tanımlayınız.
+            // her bir kenar özelliğini kapsülleme yöntemi ile tanımlayınız.
+            // Kapsülleme yaparken aşağıdaki kuralları dikakate alınız.
+
+            // Yapıcı metotda Kenarlara 0 değeri atayınız.
+            // İlk 2 kenar girildikten sonra 3. kenar girilirken:
+            // 3. kenarın boyu ilk 2 kenarın boyunun toplamında fazla olamaz.
+            // Fazla girilmiş ise: değer olarak 2 kenarın toplamını atayınız.
+            // 3. kenarın boyu ilk 2 kenarın farkından az da olamaz.
+            // Az girilmiş ise: değer olarak 2 kenarın farkını atayınız.
+
+
+
+
+
+
 
             Console.ReadKey();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
