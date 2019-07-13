@@ -50,13 +50,74 @@ namespace OOP_Sorular
             //HesapMakinesi h4 = new HesapMakinesi(100, 10, "Çıkar");
 
 
+            // SORU4: Ucgen isminde bir sınıf tanımlayınız.
+            // her bir kenar özelliğini kapsülleme yöntemi ile tanımlayınız.
+            // Kapsülleme yaparken aşağıdaki kuralları dikakate alınız.
 
+            // Yapıcı metotda Kenarlara 0 değeri atayınız.
+            // İlk 2 kenar girildikten sonra 3. kenar girilirken:
+            // 3. kenarın boyu ilk 2 kenarın boyunun toplamında fazla olamaz.
+            // Fazla girilmiş ise: değer olarak 2 kenarın toplamını atayınız.
+            // 3. kenarın boyu ilk 2 kenarın farkından az da olamaz.
+            // Az girilmiş ise: değer olarak 2 kenarın farkını atayınız.
+
+            // CEVAP4
+            Ucgen u1 = new Ucgen();
+            u1.Kenar1 = 3;
+            u1.Kenar2 = 5;
+            u1.Kenar3 = 4;
+            Console.WriteLine($"Üçgenin Kenarları: {u1.Kenar1} {u1.Kenar2} {u1.Kenar3} ");
             Console.Read();
-
-
 
         }
     }
+
+    // CEVAP4
+    class Ucgen
+    {
+        private int pKenar1;
+        private int pKenar2;
+        private int pKenar3;
+
+        public int Kenar1
+        {
+            get { return pKenar1; }
+            set { pKenar1 = value; }
+        }
+        public int Kenar2
+        {
+            get { return pKenar2; }
+            set { pKenar2 = value; }
+        }
+        public int Kenar3
+        {
+            get { return pKenar3; }
+            set
+            {
+                int ikiKenarToplami = this.pKenar1 + this.pKenar2;
+                int ikiKenarFarki = Math.Abs(this.pKenar1 - this.pKenar2);
+                if (value>ikiKenarToplami)
+                {
+                    pKenar3 = ikiKenarToplami;
+                }
+                else if(value<ikiKenarFarki)
+                {
+                    pKenar3 = ikiKenarFarki;
+                }
+                else
+                {
+                    pKenar3 = value;
+                }
+            }
+        }
+        public Ucgen()
+        {
+            this.pKenar1 = 0;
+            this.pKenar2 = 0;
+            this.pKenar3 = 0;
+        }
+    }
+
     //CEVAP3
     class HesapMakinesi
     {
